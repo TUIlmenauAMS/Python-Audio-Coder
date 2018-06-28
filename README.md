@@ -3,6 +3,8 @@
 This is a Python implementation of an audio coder, for teaching purposes. 
 The audio coder includes Huffman coding and writing a binary compressed file
 as encoded version.
+Copy the directory to a local directory with:
+git clone https://github.com/TUIlmenauAMS/Python-Audio-Coder
 
 * For the encoder use: 
 
@@ -17,9 +19,9 @@ The audiofile could be the included test48khz.wav for testing.
 The resulting bit rate is around 1.5 bits/sample for quality around 100%.
 Observe that there is no inherent limit on the sampling rate and quality setting, for experimenting.
 
-It uses an MDCT filter bank with 1024 subbands (can be set in file audio_encoder.py on line 48 and on line 27 in audio_decoder.py) with a sine window, a psycho-acoustic model with non-linear superposition, and Huffman coding. It computes new Huffman tables for each audio signal and stores them in the
-compressed binary file as side information.
-For experimentation, the different numbers of subbands can be tried for different signals, and the resulting audio quality and bit rate can be compared. For instance for percussive signals like castanets, 1024 subbands should lead to audible pre-echo artifacts, and a lower mumber of subbands should lead to a higher audio quality. For more tonal signals high subbands should be better, speech should be in between.
+It uses an MDCT filter bank with 1024 subbands (can be set in file audio_encoder.py on line 48 and on line 27 in audio_decoder.py) with a sine window, a psycho-acoustic model with non-linear superposition, and Huffman coding. It computes new Huffman tables for each audio signal and stores them in the compressed binary file as side information.
+
+For experimentation, different numbers of subbands can be tried for different signals, and the resulting audio quality and bit rate can be compared. For instance for percussive signals like castanets, 1024 subbands should lead to audible pre-echo artifacts, and a lower mumber of subbands should lead to a higher audio quality. For more tonal signals high subbands should be better, speech should be in between.
 
 The number of bark subbands used in the psycho-acoustic subbands is 64, but it can also be changed, on line 49 in file audio_encoder.py and line 28 in audio_decoder.py. This can be used to experiment with the Bark resolution of the psycho-acoustic model.
 
@@ -52,6 +54,7 @@ sudo pip3 install PyAudio
 For the binary file, the library "pickle" is needed, it can be installed with
 
 sudo pip3 install pickle 
+
 
 Gerald Schuller, gerald.schuller@tu-ilmenau.de, June 2018.
 
