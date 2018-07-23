@@ -55,7 +55,7 @@ For the binary file, the library "pickle" is needed, it can be installed with
 
 sudo pip3 install pickle 
 
-** Filter Bank Optimization
+## Filter Bank Optimization
 
 The folder also contains a few programs which show how to optimize different types of filter banks, with regard to their filter characteristics.
 
