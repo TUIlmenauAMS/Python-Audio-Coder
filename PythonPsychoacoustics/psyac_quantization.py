@@ -23,7 +23,7 @@ def MDCT_psayac_quant_enc(x,fs,fb,N, nfilts=64,quality=100):
    #y: the MDCT subbands,
    #mTbarkquant: The quantied masking threshold in the Bark domain
    #usage: yq, y, mTbarkquant =MDCT_psayac_quant_enc(x,fs,fb,N)
-   
+   print("quality=", quality)
    maxfreq=fs/2
    alpha=0.8  #Exponent for non-linear superposition of spreading functions
    nfft=2*N  #number of fft subbands
@@ -51,7 +51,7 @@ def MDCT_psayac_quant_enc(x,fs,fb,N, nfilts=64,quality=100):
    for m in range(M): #M: number of blocks
      #Observe: MDCT instead of STFT as input can be used by replacing ys by y:
      mXbark=mapping2bark(np.abs(ys[:,m]),W,nfft)
-     mTbark=maskingThresholdBark(mXbark,spreadingfuncmatrix,alpha,fs,nfilts)/(quality/100.0)
+     mTbark=maskingThresholdBark(mXbark,spreadingfuncmatrix,alpha,fs,nfilts)/(quality/100)
      #Logarithmic quantization of the "scalefactors":
      mTbarkquant[:,m]=np.round(np.log2(mTbark)*4) #quantized scalefactors
      mTbarkquant[:,m]=np.clip(mTbarkquant[:,m],0,None) #dequantized is at least 1 
@@ -127,7 +127,7 @@ if __name__ == '__main__':
    fb=np.sin(np.pi/(2*N)*(np.arange(int(1.5*N))+0.5))
    print("Encoder part:")
    #MDCT and quantization:
-   yq, y, mTbarkquant = MDCT_psayac_quant_enc(x,fs,fb,N, nfilts,quality=60.0)
+   yq, y, mTbarkquant = MDCT_psayac_quant_enc(x,fs,fb,N, nfilts,quality=60)
 
    print("Decoder part:")
    xrek, mT, ydeq = MDCTsyn_dequant_dec(yq, mTbarkquant, fs, fb, N, nfilts)
@@ -172,7 +172,7 @@ if __name__ == '__main__':
    plt.ylabel("Normalized Frequency (pi is Nyquist freq.)")
    plt.show()
    
-   plt.plot(xrek)
+   plt.plot(x)
    plt.title("The reconstructed audio signal")
    plt.show()
    

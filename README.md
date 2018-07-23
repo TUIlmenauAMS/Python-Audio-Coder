@@ -55,6 +55,21 @@ For the binary file, the library "pickle" is needed, it can be installed with
 
 sudo pip3 install pickle 
 
+** Filter Bank Optimization
 
-Gerald Schuller, gerald.schuller@tu-ilmenau.de, June 2018.
+The folder also contains a few programs which show how to optimize different types of filter banks, with regard to their filter characteristics.
+
+The following runs an optimization for an MDCT, in this example for N=4 subbands (and filter length 2N=8),
+
+python3 optimfuncMDCT.py
+
+This runs an optimization for a Low Delay Filter Bank, also for N=4, but filter length 3N=12, and system delay of 7 (including blocking delay of N-1=3, which doesn't show up in file based examples),
+
+python3 optimfuncLDFB.py
+
+The last runs an optimization for a PQMF filter bank, for N=4 subbands and filter length 8N=32, and system delay of 31 (including the blocking delay of N-1=3),
+
+python3 optimfuncQMF.py
+
+Gerald Schuller, gerald.schuller@tu-ilmenau.de, July 2018.
 

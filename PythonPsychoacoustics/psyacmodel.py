@@ -24,13 +24,13 @@ def f_SP_dB(maxfreq,nfilts):
 def spreadingfunctionmat(spreadingfunctionBarkdB,alpha,nfilts):
    #Turns the spreading prototype function into a matrix of shifted versions.
    #Convert from dB to "voltage" and include alpha exponent
+   #nfilts: Number of subbands in the Bark domain, for instance 64  
    spreadingfunctionBarkVoltage=10.0**(spreadingfunctionBarkdB/20.0*alpha)
    #Spreading functions for all bark scale bands in a matrix:
    spreadingfuncmatrix=np.zeros((nfilts,nfilts))
    for k in range(nfilts):
       spreadingfuncmatrix[k,:]=spreadingfunctionBarkVoltage[(nfilts-k):(2*nfilts-k)]
    return spreadingfuncmatrix
-
 
 
 
@@ -41,9 +41,9 @@ def maskingThresholdBark(mXbark,spreadingfuncmatrix,alpha,fs,nfilts):
   #spreadingfuncmatrix: spreading function matrix from function spreadingfunctionmat
   #alpha: exponent for non-linear superposition (eg. 0.6), 
   #fs: sampling freq., nfilts: number of Bark subbands
-  #return: masking threshold as "voltage" on Bark scale 
-  #Returns:
-  #mTbark: the resulting Masking Threshold on the Bark scale 
+  #nfilts: Number of subbands in the Bark domain, for instance 64  
+  #Returns: mTbark: the resulting Masking Threshold on the Bark scale 
+  
   #Compute the non-linear superposition:
   mTbark=np.dot(mXbark**alpha, spreadingfuncmatrix**alpha)
   #apply the inverse exponent to the result:

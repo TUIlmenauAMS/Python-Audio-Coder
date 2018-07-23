@@ -57,9 +57,9 @@ if __name__ == '__main__':
    N=4
    D=Dmatrix(N)
    Dinv=Dinvmatrix(N)
-   #Filter bank coefficients, 1.5*N of sine window:
+   #Filter bank coefficients for sine window:
    #fb=np.sin(np.pi/(2*N)*(np.arange(int(1.5*N))+0.5))
-   fb=np.loadtxt("MDCTcoeff.txt")
+   fb=np.loadtxt("MDCTcoeff.txt") #Coeff. from optimization
    print("fb=", fb)
    #input test signal, ramp:
    x=np.arange(64)
