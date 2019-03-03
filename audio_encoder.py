@@ -59,8 +59,8 @@ print("Compressed file:", encfile)
 totalbytes=0
 
 with open(encfile, 'wb') as codedfile: #open compressed file
-   pickle.dump(fs,codedfile)
-   pickle.dump(channels,codedfile)
+   pickle.dump(fs,codedfile)  #write sampling rate
+   pickle.dump(channels,codedfile) #write number of channels
    
    for chan in range(channels): #loop over channels:
       print("channel ", chan)
@@ -69,7 +69,7 @@ with open(encfile, 'wb') as codedfile: #open compressed file
 
       print("Huffman Coding")
       #Train Huffman coder for quantized masking threshold in the Bark domain (scalefactors),
-      #with flattening the array in column (subband) order:
+      #with flattening the masking threshold array in column (subband) order:
       mTbarkquantflattened=np.reshape(mTbarkquant, (1,-1),order='F')
       mTbarkquantflattened=mTbarkquantflattened[0] #remove dimension 0
       codecmTbarkquant=HuffmanCodec.from_data(mTbarkquantflattened)
