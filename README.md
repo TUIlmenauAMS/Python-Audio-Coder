@@ -71,5 +71,48 @@ The last runs an optimization for a PQMF filter bank, for N=4 subbands and filte
 
 python3 optimfuncQMF.py
 
-Gerald Schuller, gerald.schuller@tu-ilmenau.de, July 2018.
+## Predictive Lossless Audio Coding
+### The Predictive Lossless Encoder
+To execute our predictive lossless coder on an example audio file "fspeech.wav", we execute in a terminal shell,
+
+python lossless_predictive_audio_encoder.py fspeech.wav
+
+It produces the file "fspeech.lacodpred". Instead of "fspeech.wav", we could also take a file from
+freesound.org.
+
+### The Predictive Lossless Decoder
+
+We can execute the decoder with the command
+
+python lossless_predictive_audio_decoder.py fspeech.lacodpred
+
+It produces the file "fspeechlarek.wav", which is identical to the original, but a few
+samples shorter, because the encoder only processes full Rice coding blocks.
+
+## Scalable Lossless Audio Coding
+### The Lossless Encoder
+we can record a stereo audio test file by using a stereo microphone by
+entering the following command in our Linux shell,
+
+arecord -c 2 -r 32000 -f S16_LE -d 5 stereosound.wav
+
+We can listen to the recorded sound with the command
+
+aplay stereosound.wav
+
+Then we apply the lossless audio encoder with
+
+python lossless_rice_audio_encoder.py stereosound.wav
+
+This produces the file with the reconstructed audio "stereosoundlarek.wav".
+
+### The Lossless Decoder
+
+We can apply our lossless audio decoder,
+
+python lossless_rice_audio_decoder.py stereosound.lacodrice
+
+the reconstructed file is somewhat smaller.
+
+Gerald Schuller, gerald.schuller@tu-ilmenau.de, March 2019.
 
