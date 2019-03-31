@@ -116,7 +116,7 @@ def mappingfrombarkmat(W,nfft):
   #argument: W: mapping matrix from function mapping2barkmat
   #nfft: : number of subbands in fft
   nfreqs=int(nfft/2)
-  W_inv= np.dot(np.diag((1.0/np.sum(W,1))**0.5), W[:,0:nfreqs + 1]).T
+  W_inv= np.dot(np.diag((1.0/(np.sum(W,1)+1e-6))**0.5), W[:,0:nfreqs + 1]).T
   return W_inv
 
 #-------------------
