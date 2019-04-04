@@ -42,8 +42,8 @@ def MDCT_psayac_quant_enc(x,fs,fb,N, nfilts=64,quality=100):
    y=MDCTanafb(x,N,fb)
    M=y.shape[1] #number of blocks in the signal
    #y.shape : 1024,32
-   f,t,ys=scipy.signal.stft(x,fs=2*np.pi,nperseg=2048)
-   ys *= np.sqrt(2048/2)/2/0.375
+   f,t,ys=scipy.signal.stft(x,fs=2*np.pi,nperseg=2*N)
+   ys *= np.sqrt(2*N/2)/2/0.375
    #ys.shape: 1025,33
    print("masking threshold calculation,")
    mT=np.zeros((N+1,M))
@@ -61,11 +61,11 @@ def MDCT_psayac_quant_enc(x,fs,fb,N, nfilts=64,quality=100):
      mT[:,m]=mappingfrombark(mTbarkdequant,W_inv,nfft)
    print("quantization according to the masking threshold,")
    #print("mTbark=", mTbark)
-   #Book: Quantization and sclae factors:
-   #hidden noise standard deviation= mX = sigma,
-   #sigma**2=(delta**2)/12,
-   #sigma*sqrt(12)=delta
-   #delta is vector of length 1025 frequency bins,
+   #Quantization and scale factors:
+   #
+   #
+   #The maximum of the magnitude of the quantization error is delta/2, we can set
+   #delta=mT*2, delta is vector of length 1025 frequency bins,
    delta=mT*2 
    #delta.shape: 1025,32
    delta=delta[:-1,:] #drop the last stft band to obtain an even number of bands
