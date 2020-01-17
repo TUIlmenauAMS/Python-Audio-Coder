@@ -56,11 +56,11 @@ def maskingThresholdBark(mXbark,spreadingfuncmatrix,alpha,fs,nfilts):
   #convert the bark subband frequencies to Hz:
   f=bark2hz(barks)+1e-6
   #Threshold of quiet in the Bark subbands in dB:
-  LTQ=np.clip((3.64*(f/1000.)**-0.8 -6.5*np.exp(-0.6*(f/1000.-3.3)**2.)+1e-3*((f/1000.)**4.)),-20,160)
+  LTQ=np.clip((3.64*(f/1000.)**-0.8 -6.5*np.exp(-0.6*(f/1000.-3.3)**2.)
+      +1e-3*((f/1000.)**4.)),-20,120)
   #Maximum of spreading functions and hearing threshold in quiet:
   mTbark=np.max((mTbark, 10.0**((LTQ-60)/20)),0)
   return mTbark
-
 
 
 

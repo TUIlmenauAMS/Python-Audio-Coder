@@ -31,14 +31,14 @@ def nlmslosslesspreddec(e,L,h):
       #prediction error and filter, using the vector of reconstructed samples,
       #predicted value from past reconstructed values, since it is lossless, xrek=x:
       xrekvec=xrek[n-L+np.arange(L)]
-      P=np.dot(np.flipud(xrekvec), h)
+      P=np.dot(np.flipud(xrekvec), h); 
       #quantize and de-quantize by rounding to the nearest integer:
       P=round(P)
       #reconstructed value from prediction error:
-      xrek[n] = e[n] + P
+      xrek[n] = e[n] + P; 
       #NLMS update:
       h = h + 1.0* e[n]*np.flipud(xrekvec)/(0.1+np.dot(xrekvec,xrekvec))
-   return xrek
+   return np.hstack((xrek[L:],np.zeros(L))) #remove leading zeros to avoid their delay
 
 if __name__ == '__main__':
    if (len(sys.argv) <2):
@@ -69,7 +69,7 @@ if __name__ == '__main__':
       xrek=np.zeros((numblocks*N, channels))
       for chan in range(channels): #loop over channels:
          print("channel ", chan)
-         ricecoeffcomp=pickle.load(codedfile)
+         ricecoeffcomp=pickle.load(codedfile); 
          ricecoeff =struct.unpack( 'B' * len(ricecoeffcomp), ricecoeffcomp);
          print("len(ricecoeff)=", len(ricecoeff))
          prederrordec=np.zeros(N*numblocks)
@@ -80,8 +80,8 @@ if __name__ == '__main__':
             signedrice=rice(b=ricecoeff[k],signed=True)
             prederrorrice = BitStream(); 
             prederrorrice.write(prederrors)
-            prederrordec[k*N:(k+1)*N]=prederrorrice.read(signedrice, N)
-         print("NLMS prediction:")
+            prederrordec[k*N:(k+1)*N]=prederrorrice.read(signedrice, N); 
+         print("NLMS prediction:"); 
          h=np.zeros(L)
          prederrordec=prederrordec*1.0 #convert to float to avoid overflow
          print("len(prederrordec)=", len(prederrordec))

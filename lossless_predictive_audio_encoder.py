@@ -26,13 +26,13 @@ def nlmslosslesspredenc(x,L,h):
    #L: Predictor lenght
    #h: starting values for the L predictor coefficients
    #returns: e, the prediction error
-   
-   e=np.zeros(len(x))
+   x=np.hstack((np.zeros(L),x)); #make same starting conditions as decoder
+   e=np.zeros(len(x)); 
    for n in range(L, len(x)):
       #prediction error and filter, using the vector of reconstructed samples,
       #predicted value from past reconstructed values, since it is lossless, xrek=x:
       xrekvec=x[n-L+np.arange(L)]
-      P=np.dot(np.flipud(xrekvec), h)
+      P=np.dot(np.flipud(xrekvec), h);
       #quantize and de-quantize by rounding to the nearest integer:
       P=round(P)
       #prediction error:
@@ -84,7 +84,7 @@ if __name__ == '__main__':
          numblocks=len(e)//N
          prederror=np.reshape(e[:numblocks*N], (N,numblocks), order='F')
          print("numblocks=", numblocks)
-         pickle.dump(numblocks, codedfile, protocol=-1)  #write number of blocks
+         if chan==0: pickle.dump(numblocks, codedfile, protocol=-1)  #write number of blocks
          print("Rice Coding:")
          #Suitable Rice coding coefficient estimation for the blocks:
          #https://ipnpr.jpl.nasa.gov/progress_report/42-159/159E.pdf

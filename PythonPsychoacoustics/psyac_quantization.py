@@ -15,7 +15,7 @@ from MDCTfb import *
 
 def MDCT_psayac_quant_enc(x,fs,fb,N, nfilts=64,quality=100):
    #Function to compute the quantized psycho-acoustic masking threshold
-   #barguments: signal x, 
+   #arguments: signal x (mono), 
    #sampling frequency of x: fs, 
    #MDCT window fb
    #quality: Quality in percent, default: 100, higher is better quality
@@ -28,8 +28,8 @@ def MDCT_psayac_quant_enc(x,fs,fb,N, nfilts=64,quality=100):
    alpha=0.8  #Exponent for non-linear superposition of spreading functions
    nfft=2*N  #number of fft subbands
    
-   W=mapping2barkmat(fs,nfilts,nfft)
-   W_inv=mappingfrombarkmat(W,nfft)
+   W=mapping2barkmat(fs,nfilts,nfft); 
+   W_inv=mappingfrombarkmat(W,nfft); 
    spreadingfunctionBarkdB=f_SP_dB(maxfreq,nfilts)
    spreadingfuncmatrix=spreadingfunctionmat(spreadingfunctionBarkdB,alpha,nfilts)
 
