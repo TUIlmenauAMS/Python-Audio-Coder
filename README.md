@@ -83,6 +83,18 @@ The last runs an optimization for a PQMF filter bank, for N=4 subbands and filte
 
 python3 optimfuncQMF.py
 
+##The Psycho-acoustic Pre- and Post-Filters
+
+The psycho-acoustic pre-filter normalizes a signal to its psycho-acoustic masking threshold, such that a given error in time of over frequency has a comparable effect for hearing. This can also be seen as a psycho-acoustic domain where a mean squared error has a psycho-acoustic meaning.
+
+The functions for the psycho-acoustic pre-and post-filter are in psyacprepostfilter.py
+
+A front end for the pre-filter for file processing is: psyacpostfilterFromFile.py.
+
+Similarly, a file front-end for the post-filt is: psyacprefilterToFile.py
+
+
+
 ## Predictive Lossless Audio Coding
 ### The Predictive Lossless Encoder
 To execute our predictive lossless coder on an example audio file "fspeech.wav", we execute in a terminal shell,
