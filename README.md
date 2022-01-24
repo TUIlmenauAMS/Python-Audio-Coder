@@ -93,7 +93,7 @@ A front end for the pre-filter for file processing is: psyacpostfilterFromFile.p
 
 Usage: python3 psyacprefilterToFile.py audiofile.wav [quality]
 
-default for quaity is 100, higher number give higher quality but leads to higher bit-rate
+default for quaity is 100, higher numbers give higher quality but leads to higher bit-rate
 
 Similarly, a file front-end for the post-filt is: psyacprefilterToFile.py
 
