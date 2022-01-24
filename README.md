@@ -3,7 +3,19 @@
 This is a Python implementation of an audio coder, for teaching purposes. 
 The audio coder includes Huffman coding and writing a binary compressed file
 as encoded version.
-Copy the directory to a local directory with:
+It is for the book:
+
+Schuller, Gerald: 
+"Filter Banks and Audio Coding, Compressing Audio Signals Using Python"
+
+Springer, 2020,
+
+https://www.springer.com/gp/book/9783030512484
+
+https://www.amazon.de/-/en/Gerald-Schuller/dp/3030512487
+
+You can copy the directory to a local directory with:
+
 git clone https://github.com/TUIlmenauAMS/Python-Audio-Coder
 
 * For the encoder use: 
