@@ -91,13 +91,13 @@ The functions for the psycho-acoustic pre-and post-filter are in psyacprepostfil
 
 A front end for the pre-filter for file processing is: psyacpostfilterFromFile.py.
 
-Usage: python3 psyacprefilterToFile audiofile.wav [quality]
+Usage: python3 psyacprefilterToFile.py audiofile.wav [quality]
 
 default for quaity is 100, higher number give higher quality but leads to higher bit-rate
 
 Similarly, a file front-end for the post-filt is: psyacprefilterToFile.py
 
-Usage: python3 psyacpostfilterFromFile audiopref.wav
+Usage: python3 psyacpostfilterFromFile.py audiopref.wav
 
 
 ## Predictive Lossless Audio Coding
