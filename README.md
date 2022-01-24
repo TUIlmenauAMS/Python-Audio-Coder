@@ -45,7 +45,7 @@ python3 audio_decoder.py audiofile.acod
 
 It writes the decoded audio signal in .wav format in file audiofilerek.wav
 
-* A demo and test of the psycho-acoustic model is obtained be running
+* A demo and test of the psycho-acoustic model in directory PythonPsychoacoustics is obtained be running
 
 python3 psyacmodel.py
 
