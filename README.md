@@ -138,5 +138,5 @@ python lossless_rice_audio_decoder.py stereosound.lacodrice
 
 the reconstructed file is somewhat smaller.
 
-Gerald Schuller, gerald.schuller@tu-ilmenau.de, March 2019.
+Gerald Schuller, gerald.schuller@tu-ilmenau.de, January 2022.
 
