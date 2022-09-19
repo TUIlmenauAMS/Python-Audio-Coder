@@ -93,7 +93,7 @@ def mapping2barkmat(fs, nfilts,nfft):
   #nfft: number of subbands in fft
   maxbark=hz2bark(fs/2) #upper end of our Bark scale:22 Bark at 16 kHz
   nfreqs=nfft/2; step_bark = maxbark/(nfilts-1)
-  binbark = hz2bark(np.linspace(0,(nfft/2),int((nfft/2)+1)*fs/nfft))
+  binbark = hz2bark(np.linspace(0,(nfft/2),int(nfft/2)+1)*fs/nfft)
   W = np.zeros((nfilts, nfft))
   for i in range(nfilts):
      W[i,0:int(nfft/2)+1] = (np.round(binbark/step_bark)== i)
