@@ -113,9 +113,9 @@ freesound.org.
 
 We can execute the decoder with the command
 
-python lossless_predictive_audio_decoder.py fspeech.lacodpred
+python lossless_predictive_audio_decoder.py test48khz.lacodpred
 
-It produces the file "fspeechlarek.wav", which is identical to the original, but a few
+It produces the file "test48khz.wav", which is identical to the original, but a few
 samples shorter, because the encoder only processes full Rice coding blocks.
 
 ## Scalable Lossless Audio Coding
