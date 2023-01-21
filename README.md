@@ -102,7 +102,7 @@ Usage: python3 psyacpostfilterFromFile.py audiopref.wav
 
 ## Predictive Lossless Audio Coding
 ### The Predictive Lossless Encoder
-To execute our predictive lossless coder on an example audio file "fspeech.wav", we execute in a terminal shell,
+To execute our predictive lossless coder on an example audio file "test48khz.wav", we execute in a terminal shell,
 
 python lossless_predictive_audio_encoder.py test48khz.wav
 
