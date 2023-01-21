@@ -104,9 +104,9 @@ Usage: python3 psyacpostfilterFromFile.py audiopref.wav
 ### The Predictive Lossless Encoder
 To execute our predictive lossless coder on an example audio file "fspeech.wav", we execute in a terminal shell,
 
-python lossless_predictive_audio_encoder.py fspeech.wav
+python lossless_predictive_audio_encoder.py test48khz.wav
 
-It produces the file "fspeech.lacodpred". Instead of "fspeech.wav", we could also take a file from
+It produces the file "fspeech.lacodpred". Instead of "test48khz.wav", we could also take a file from
 freesound.org.
 
 ### The Predictive Lossless Decoder
