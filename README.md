@@ -18,7 +18,7 @@ You can copy the directory to a local directory with:
 
 git clone https://github.com/TUIlmenauAMS/Python-Audio-Coder
 
-* For the encoder use: 
+## For the encoder use: 
 
 python3 audio_encoder.py audiofile.wav [quality]
 
@@ -38,14 +38,15 @@ For experimentation, different numbers of subbands can be tried for different si
 The number of bark subbands used in the psycho-acoustic subbands is 64, but it can also be changed, on line 49 in file audio_encoder.py and line 28 in audio_decoder.py. This can be used to experiment with the Bark resolution of the psycho-acoustic model.
 
 
-* To decode the encoded audio signal in *.acod
-use: 
+## To decode the encoded audio signal 
+in *.acod use: 
 
 python3 audio_decoder.py audiofile.acod
 
 It writes the decoded audio signal in .wav format in file audiofilerek.wav
 
-* A demo and test of the psycho-acoustic model in directory PythonPsychoacoustics is obtained be running
+## A demo and test of the psycho-acoustic model in directory PythonPsychoacoustics 
+is obtained be running
 
 python3 psyacmodel.py
 
