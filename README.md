@@ -76,7 +76,7 @@ The following runs an optimization for an MDCT, in this example for N=4 subbands
 
 python3 optimfuncMDCT.py
 
-This runs an optimization for a Low Delay Filter Bank, also for N=4, but filter length 3N=12, and system delay of 7 (including blocking delay of N-1=3, which doesn't show up in file based examples),
+The following runs an optimization for a Low Delay Filter Bank, also for N=4, but filter length 3N=12, and system delay of 7 (including blocking delay of N-1=3, which doesn't show up in file based examples),
 
 python3 optimfuncLDFB.py
 
