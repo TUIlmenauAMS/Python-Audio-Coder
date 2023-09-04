@@ -18,6 +18,8 @@ You can copy the directory to a local directory with:
 
 git clone https://github.com/TUIlmenauAMS/Python-Audio-Coder
 
+You can also use the supplied Colab notebook.
+
 ## For the encoder use: 
 
 python3 audio_encoder.py audiofile.wav [quality]
