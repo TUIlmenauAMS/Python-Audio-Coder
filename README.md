@@ -18,7 +18,9 @@ You can copy the directory to a local directory with:
 
 git clone https://github.com/TUIlmenauAMS/Python-Audio-Coder
 
-You can also use the supplied Colab notebook.
+You can also use the Colab notebook:
+
+https://colab.research.google.com/github/TUIlmenauAMS/Python-Audio-Coder/blob/master/pythonAudioCoderExamples.ipynb
 
 ## For the encoder use: 
 
