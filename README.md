@@ -147,6 +147,12 @@ We can apply our lossless audio decoder,
 python lossless_rice_audio_decoder.py stereosound.lacodrice
 
 the reconstructed file is somewhat smaller.
+## A Psychoacoustic Loss Function
+A recently added functionality is a loss function based on the psycho-acoustic model, for optimizing machine learning models. This functionality is in the module "psyacloss.py".
+Its use and function is illustrated in the following Colab notebook:
 
-Gerald Schuller, gerald.schuller@tu-ilmenau.de, January 2022.
+### The Colab Jupyter notebook for the perceptual loss function, using the psycho-acoustic model:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/psyacLoss.ipynb)
+
+Gerald Schuller, gerald.schuller@tu-ilmenau.de, October 2023.
 
