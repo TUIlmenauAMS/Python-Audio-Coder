@@ -1,6 +1,7 @@
 #Psycho-acoustic threshold function
 #Gerald Schuller, September 2023
 import sys
+import scipy.signal
 sys.path.append('./PythonPsychoacoustics')
 from psyacmodel import *
 
