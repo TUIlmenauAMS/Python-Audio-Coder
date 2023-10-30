@@ -6,7 +6,7 @@ from psyacmodel import *
 
 
 def psyacthresh(ys,fs):
-  #input: ys: 2d array of sound STFT (from a mono signal)
+  #input: ys: 2d array of sound STFT (from a mono signal, shape N+1,M)
   #fs: sampling frequency in samples per second
   #returns: mT, the masking threshold in N+1 subbands for the M blocks (shape N+1,M)
 
@@ -17,6 +17,7 @@ def psyacthresh(ys,fs):
   M=ys.shape[1]
   #N=nfft//2
   N=ys.shape[0]-1
+  nfft=2*N
 
   W=mapping2barkmat(fs,nfilts,nfft)
   W_inv=mappingfrombarkmat(W,nfft)
