@@ -16,8 +16,10 @@ from optimfuncQMF import optimfuncQMF
 ##############################################################################
 #p.80
 
+N=4
+
 #Anmerkung: Der Plot ist nicht wie der im Buch. optimfuncQMF liefert jedoch die richtigen Ergebnisse...
-xmin = opt.minimize(optimfuncQMF,16*np.ones(16),method='SLSQP')
+xmin = opt.minimize(optimfuncQMF,16*np.ones(16), args=(N,),method='SLSQP')
 xmin = xmin["x"]
 
 h = np.concatenate((xmin,np.flipud(xmin)))#?????
@@ -33,7 +35,6 @@ plt.show()
 ##############################################################################
 #p.84
 ha=range(31)
-N=4
 
 H=ha2Pa3d(ha,N)
 
