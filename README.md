@@ -20,7 +20,8 @@ git clone https://github.com/TUIlmenauAMS/Python-Audio-Coder
 
 You can also use the Colab notebook:
 
-[![Google Colab](https://badgen.net/badge/Launch/on%20Google%20Colab/black?icon=terminal)](https://colab.research.google.com/github/TUIlmenauAMS/Python-Audio-Coder/blob/master/pythonAudioCoderExamples.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]
+(https://colab.research.google.com/github/TUIlmenauAMS/Python-Audio-Coder/blob/master/pythonAudioCoderExamples.ipynb)
 
 ## For the encoder use: 
 
