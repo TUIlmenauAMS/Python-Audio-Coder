@@ -63,7 +63,7 @@ def percloss(orig, modified, fs):
         mT[:,c,:]=psyacthresh(origys[:,c,:],fs)
   else:
     chan=1
-    mT=psyachtresh(origys,fs)
+    mT=psyacthresh(origys,fs)
   """
   plt.plot(20*np.log10(np.abs(origys[:,0,400])+1e-6))
   plt.plot(20*np.log10(mT[:,0,400]+1e-6))
