@@ -54,12 +54,13 @@ def percloss(orig, modified, fs):
     N = nfft//2
 
     # print("orig.shape=", orig.shape)
-    origys = torch.stft(orig, n_fft=2*N, hop_length=2 *
-                        N//2, return_complex=True, normalized=True, window=torch.hann_window(2*N))
+    
     # origsys.shape= freq.bin, channel, block
     if len(orig.shape) == 2:  # multichannel
         chan = orig.shape[1]
         for c in range(chan):
+            origys = torch.stft(orig[:,c], n_fft=2*N, hop_length=2 *
+                        N//2, return_complex=True, normalized=True, window=torch.hann_window(2*N))
             if c == 0:  # initialize masking threshold tensor mT
                 mT0 = psyacthresh_torch(origys[:, c, :], fs)
                 rows, cols = mT0.shape
@@ -69,6 +70,8 @@ def percloss(orig, modified, fs):
                 mT[:, c, :] = psyacthresh_torch(origys[:, c, :], fs)
     else:
         chan = 1
+        origys = torch.stft(orig, n_fft=2*N, hop_length=2 *
+                        N//2, return_complex=True, normalized=True, window=torch.hann_window(2*N))
         mT = psyacthresh_torch(origys, fs)
     """
     plt.plot(20*np.log10(np.abs(origys[:,0,400])+1e-6))
