@@ -62,12 +62,12 @@ def percloss(orig, modified, fs):
             origys = torch.stft(orig[:,c], n_fft=2*N, hop_length=2 *
                         N//2, return_complex=True, normalized=True, window=torch.hann_window(2*N))
             if c == 0:  # initialize masking threshold tensor mT
-                mT0 = psyacthresh_torch(origys[:, c, :], fs)
+                mT0 = psyacthresh_torch(origys[:, :], fs)
                 rows, cols = mT0.shape
                 mT = torch.zeros((rows, chan, cols))
                 mT[:, 0, :] = mT0
             else:
-                mT[:, c, :] = psyacthresh_torch(origys[:, c, :], fs)
+                mT[:, c, :] = psyacthresh_torch(origys[:, :], fs)
     else:
         chan = 1
         origys = torch.stft(orig, n_fft=2*N, hop_length=2 *
