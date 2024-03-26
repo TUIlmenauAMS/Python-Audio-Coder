@@ -2,7 +2,8 @@
 #Gerald Schuller, September 2023
 import sys
 import scipy.signal
-sys.path.append('./PythonPsychoacoustics')
+currentpath=sys.path[0]
+sys.path.append(currentpath+'/PythonPsychoacoustics')
 from psyacmodel import *
 
 
