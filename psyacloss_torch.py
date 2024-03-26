@@ -3,7 +3,8 @@
 # torch version from Renato Profeta and Gerald Schuller, Feb 2024
 
 import sys
-sys.path.append('./PythonPsychoacoustics')
+currentpath=sys.path[0]
+sys.path.append(currentpath+'/PythonPsychoacoustics')
 from psyacmodel_torch import *
 import torch
 
