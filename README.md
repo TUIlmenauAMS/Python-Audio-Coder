@@ -22,6 +22,10 @@ You can also use the Colab notebook:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TUIlmenauAMS/Python-Audio-Coder/blob/master/pythonAudioCoderExamples.ipynb)
 
+For more Jupyter Colab notebooks, also see our repository in:
+
+https://github.com/TUIlmenauAMS/AudioCoding_Tutorials
+
 ## For the encoder use: 
 
 python3 audio_encoder.py audiofile.wav [quality]
