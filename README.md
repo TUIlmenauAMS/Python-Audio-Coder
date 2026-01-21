@@ -155,8 +155,11 @@ the reconstructed file is somewhat smaller.
 A recently added functionality is a loss function based on the psycho-acoustic model, for optimizing machine learning models. This functionality is in the module "psyacloss.py".
 Its use and function is illustrated in the following Colab notebook:
 
-### The Colab Jupyter notebook for the perceptual loss function, using the psycho-acoustic model:
+### The Colab Jupyter notebook for the perceptual loss function, using the psycho-acoustic model, with explanations:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/psyacLoss.ipynb)
+
+### The pscho-acoustic loss function only:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/onlyPsyacLoss.ipynb)
 
 Gerald Schuller, gerald.schuller@tu-ilmenau.de, October 2023.
 
