@@ -2,6 +2,7 @@
 #Gerald Schuller, September 2023
 import sys
 import scipy.signal
+import matplotlib pyplot as plt
 currentpath=sys.path[0]
 sys.path.append(currentpath+'/PythonPsychoacoustics')
 from psyacmodel import *
