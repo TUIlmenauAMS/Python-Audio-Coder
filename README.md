@@ -161,5 +161,5 @@ Its use and function is illustrated in the following Colab notebook:
 ### The pscho-acoustic loss function only:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/onlyPsyacLoss.ipynb)
 
-Gerald Schuller, gerald.schuller@tu-ilmenau.de, October 2023.
+Gerald Schuller, gerald.schuller@tu-ilmenau.de, January 2026.
 
